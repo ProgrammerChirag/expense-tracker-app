@@ -34,8 +34,9 @@
       var url = "https://expensetracker9-dev-ed.my.salesforce-sites.com/expensetracker";
 
       xmlhttp.onreadystatechange = myfunction;
-      xmlhttp.setRequestHeader('Access-Control-Allow-Headers:Origin,Content-Type','Accept');
+      
       xmlhttp.open("GET", url, true);
+      xmlhttp.setRequestHeader('Access-Control-Allow-Headers:Origin,Content-Type','Accept');
       xmlhttp.send(null);
       function myfunction() {
         if (xmlhttp.readyState == 0) {
