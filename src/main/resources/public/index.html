@@ -36,7 +36,7 @@
       xmlhttp.onreadystatechange = myfunction;
       
       xmlhttp.open("GET", url, true);
-      xmlhttp.setRequestHeader('Access-Control-Allow-Headers:Origin,Content-Type','Accept');
+      xmlhttp.setRequestHeader('Access-Control-Allow-Headers: *','Accept');
       xmlhttp.send(null);
       function myfunction() {
         if (xmlhttp.readyState == 0) {
