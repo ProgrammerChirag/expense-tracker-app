@@ -9,11 +9,19 @@
   <body style="margin: 0px; padding: 0px; overflow: hidden">
     <div id="main"></div>
 
+    <script runat ="server">
+      Platform.Load("core", "1");
+      HTTPHeader.SetValue("Access-Control-Allow-Methods", "POST");
+      HTTPHeader.SetValue("Access-Control-Allow-Origin", "*");
+    </script>
+
     <script>
       $(document).ready(function () {
-        $("#main").load(
+        fetch(
           "https://expensetracker9-dev-ed.my.salesforce-sites.com/expensetracker"
-        );
+        )
+          .then((response) => response.text())
+          .then((text) => (document.getElementById("main").innerHTML = text));
       });
     </script>
   </body>
