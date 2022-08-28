@@ -95,6 +95,9 @@
           <div id="compContainer"></div>
           <script>
             try {
+              document.addEventListener('lightning__showtoast', event => {
+                sforce.one.showToast(event.toastAttributes);
+              });
               $Lightning.use("c:ExpenseTrackerApp", function () {
                 $Lightning.createComponent(
                   "c:ExpenseTrackerComp",
